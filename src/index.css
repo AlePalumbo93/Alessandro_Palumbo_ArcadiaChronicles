@@ -1,0 +1,16 @@
+@import url('https://fonts.cdnfonts.com/css/comic');
+
+/* ===== NAVBAR ===== */
+.searchBar{
+  width: 200px;
+  border: 2px solid black !important;
+}
+.logo{
+  height: 6rem;
+}
+.fontNav{
+  font-family: 'Comic Book', sans-serif !important;
+  font-size: x-large!important;
+}
+
+/* ===== END NAVBAR ===== */
