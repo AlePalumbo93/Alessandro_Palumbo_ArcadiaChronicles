@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import ComicCard from "../components/card/ComicCard";
 
-const apiKey = '515124204a8a4596b7c9e0dc56ba478f';
+
 const url = 'https://api.rawg.io/api/games?key=515124204a8a4596b7c9e0dc56ba478f&dates=2019-01-01,2025-01-01&page=1&page_size=50'
 
 export default function Home() {
@@ -19,11 +20,11 @@ export default function Home() {
 
    return(
       <>
+      <div className="row justify-content-between align-items-center">
          {games.map((game)=>(
-            <div key={game.id}>
-               <img className=" img-fluid" src={game.background_image} alt="" />
-            </div>
+               <ComicCard key={game.id} game={game}/>
          ))}
+      </div>
       </>
    )
 }

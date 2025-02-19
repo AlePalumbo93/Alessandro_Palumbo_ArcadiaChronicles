@@ -3,18 +3,20 @@ import {
    createRoutesFromElements,
    Route,
 } from "react-router";
-import Layout from "../layout/layout";
 import Home from "../pages/Home";
-import Game from "../pages/Game";
+import GameDetails from "../pages/Game";
 import Genre from "../pages/Genre";
+import Layout from "../layout/Layout";
+import Platform from "../pages/Platform";
 
 // You can do this:
 const router = createBrowserRouter(
    createRoutesFromElements(
       <Route path="/" element={<Layout />}>
          <Route path="/" element={<Home />}/>
-         <Route path="/games/games-name" element={<Game />}/>
-         <Route path="/games/genre" element={<Genre />}/>
+         <Route path="/games/:id/:game" element={<GameDetails />}/>
+         <Route path="/games/:platform" element={<Platform />}/>
+         <Route path="/games/:genre" element={<Genre />}/>
       </Route>
    )
 );

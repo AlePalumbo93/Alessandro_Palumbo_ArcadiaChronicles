@@ -1,16 +1,159 @@
 @import url('https://fonts.cdnfonts.com/css/comic');
 
+/* ===== BODY ===== */
+body{
+  background-image: url(./media/comicBg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* ===== END BODY ===== */
 /* ===== NAVBAR ===== */
 .searchBar{
   width: 200px;
   border: 2px solid black !important;
 }
 .logo{
-  height: 6rem;
+  height: 5rem;
+  padding: 10px;
 }
+
+.logo:hover{
+  transform: scale(1.5);
+  z-index: 20;
+}
+
 .fontNav{
   font-family: 'Comic Book', sans-serif !important;
   font-size: x-large!important;
 }
 
 /* ===== END NAVBAR ===== */
+/* =====  CARD ===== */
+.card-custom {
+  width: 80%;
+  height: 100%;
+  border: 5px solid black;
+  box-shadow: 0 0 0 10px #fff, 0 0 8px 5px #000;
+  background-color: #fff;
+  position: relative; /* Assicura che l'ingrandimento non sposti altre card */
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+.card-custom:hover {
+  transform: scale(1.1); /* Ingrandisce la card */
+  z-index: 10; /* Porta la card sopra le altre */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Aggiunge un'ombra per effetto di profondità */
+}
+
+.card-image {
+  height: 72%;
+  border-bottom: 5px solid black;
+}
+.card-image img {
+  width: 100%;
+  height: 55vh;
+}
+.card-title {
+  width: 100%;
+  height: 10rem;
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+  color: #2E5579;
+  font-family: 'Comic Book', sans-serif;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 28%;
+}
+.text-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  padding-top: 5px;
+}
+.text-left span {
+  font-size: 1.5rem;
+  line-height: 30px;
+  font-weight: 500;
+  display: block;
+}
+.text-right {
+  display: flex;
+  align-items: center;
+}
+.text-right span:first-child {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 60px;
+}
+
+/* ===== END CARD ===== */
+/* ===== DROPDOWN===== */
+.comic-btn {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: yellow !important;
+  color: black;
+  border: 4px solid black !important;
+  box-shadow: 4px 4px 0px black !important;
+  text-transform: uppercase;
+  width: 200px;
+}
+
+.comic-btn:hover {
+  background: #0498FF !important;
+  color: white !important;
+  box-shadow: 2px 2px 0px black;
+}
+
+.dropdown-menu {
+  background: #0498FF !important;
+  border: 4px solid black !important;
+  box-shadow: 4px 4px 0px black !important;
+  overflow-y: scroll;
+  height: 200px;
+}
+
+.dropdown-menu::-webkit-scrollbar{
+  background: #0498FF !important;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  width: 3px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background:yellow;
+  }
+
+.dropdown-item {
+  color: black;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.dropdown-item:hover {
+  background: black !important;
+  color: white !important;
+}
+
+/* ===== END DROPDOWN ===== */
+/* ===== GAME DETAILS ===== */
+/* ComicSection.css */
+
+.comic-section {
+  max-width: 800px;
+  margin: auto;
+}
+
+.comic-box {
+  flex: 1;
+  height: 200px;
+  border: 3px solid black;
+  background: white;
+}
+
+.full {
+  width: 100%;
+}
+
+
+/* ===== END GAME DETAILS ===== */

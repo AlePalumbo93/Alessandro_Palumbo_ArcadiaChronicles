@@ -4,7 +4,7 @@ export default function Navbar() {
    
    return(
       <>
-      <nav className="navbar navbar-expand-lg ">
+      <nav className="navbar navbar-expand-lg py-0">
          <div className="container-fluid">
             <a className="navbar-brand" href="#"><img className="logo" src={logo} alt="" /></a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@ export default function Navbar() {
                </div>
                <div className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle fontNav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Dropdown
+                     Login
                   </a>
                   <ul className="dropdown-menu">
                      <li><a className="dropdown-item" href="#">Action</a></li>
