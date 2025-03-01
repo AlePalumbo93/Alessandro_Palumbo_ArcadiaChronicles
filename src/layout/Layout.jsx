@@ -8,10 +8,16 @@ export default function Layout() {
       <>
          <Navbar/>
          <div className="container-fluid">
-            <div className="row">
-               <div className="col-2  border-end border-black border-5 pt-2">
-                  <DropFilter/>
-                  <PlatformFilter/>
+            <div className="row justify-content-center">
+               <div className="col-2  border-end border-black border-5 pt-2 d-none d-md-block">
+                  <div className="row">
+                     <div className="col-12">
+                        <DropFilter/>        
+                     </div>
+                     <div className="col-12">
+                        <PlatformFilter/>
+                     </div>
+                  </div>
                </div>
                <div className=" col-10">
                   <Outlet/>

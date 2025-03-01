@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
-const url = 'https://api.rawg.io/api/genres?key=515124204a8a4596b7c9e0dc56ba478f';
+const url = 'https://api.rawg.io/api/genres?key=4e17114348b7420eb2a8dae9804e1150';
 
 export default function DropFilter() {
 

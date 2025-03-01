@@ -10,7 +10,7 @@ export default function Platform() {
    
       useEffect(()=>{
          const fetchData = async () =>{
-            const response = await fetch(`https://api.rawg.io/api/games?key=515124204a8a4596b7c9e0dc56ba478f&platforms=${platform}&page=1`);
+            const response = await fetch(`https://api.rawg.io/api/games?key=4e17114348b7420eb2a8dae9804e1150&platforms=${platform}&page=1`);
             const json = await response.json();
             console.log(json.results);
             

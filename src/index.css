@@ -1,10 +1,13 @@
 @import url('https://fonts.cdnfonts.com/css/comic');
-
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap');
 /* ===== BODY ===== */
 body{
-  background-image: url(./media/comicBg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image:linear-gradient(180deg, rgba(209, 194, 194, 0.362), rgba(0, 0, 0, 0.1)), url(./media/comicBg.jpg);
+
+background-size: cover;
+background-position: center;
+background-attachment: fixed; /* Effetto parallasse */
+min-height: 100vh;
 }
 /* ===== END BODY ===== */
 /* ===== NAVBAR ===== */
@@ -27,6 +30,13 @@ body{
   font-size: x-large!important;
 }
 
+.fontNav:hover{
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 4px;
+  background-color: #ffcc00;
+}
+
 /* ===== END NAVBAR ===== */
 /* =====  CARD ===== */
 .card-custom {
@@ -42,6 +52,7 @@ body{
   transform: scale(1.1); /* Ingrandisce la card */
   z-index: 10; /* Porta la card sopra le altre */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Aggiunge un'ombra per effetto di profondità */
+  cursor: pointer;
 }
 
 .card-image {
@@ -98,7 +109,7 @@ body{
   border: 4px solid black !important;
   box-shadow: 4px 4px 0px black !important;
   text-transform: uppercase;
-  width: 200px;
+  width: 100%;
 }
 
 .comic-btn:hover {
@@ -112,7 +123,6 @@ body{
   border: 4px solid black !important;
   box-shadow: 4px 4px 0px black !important;
   overflow-y: scroll;
-  height: 200px;
 }
 
 .dropdown-menu::-webkit-scrollbar{
@@ -157,3 +167,256 @@ body{
 
 
 /* ===== END GAME DETAILS ===== */
+/* ===== LOADER COMIC ===== */
+.bubble {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  border: 5px solid black;
+  font-size: 24px;
+  text-align: center;
+  width: 120px;
+  box-shadow: 5px 5px 0 black;
+}
+.bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid black;
+}
+.bubble::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 22px;
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 18px solid white;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 3px;
+  background: black;
+  border-radius: 50%;
+  animation: blink 1.5s infinite;
+}
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+/* ===== END LOADER COMIC ===== */
+/* ===== ERROR MESSAGE ===== */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+.comic-alert {
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.5rem;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 3px solid black;
+    box-shadow: 5px 5px 0px black;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+.comic-alert::before {
+    content: "⚠️";
+    font-size: 2rem;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.comic-alert:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+/* ===== END ERROR MESSAGE ===== */
+/* ===== BUTTON ===== */
+.comic-button {
+  font-family: 'Comic Neue', cursive;
+  font-size: 1.5rem;
+  background-color: #ffcc00;
+  color: black;
+  padding: 15px 25px;
+  border-radius: 10px;
+  border: 3px solid black;
+  box-shadow: 5px 5px 0px black;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.comic-button:hover {
+  transform: scale(1.1);
+}
+
+.comic-button:active {
+  transform: scale(0.95);
+  box-shadow: 2px 2px 0px black;
+}
+
+.comic-button i {
+  font-size: 1.8rem;
+}
+/* ===== END BUTTON ===== */
+/* ===== FORM REGISTER ===== */
+.graphicnovel-container {
+  background-color: white;
+  border: 4px solid #000;
+  border-radius: 15px;
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+  font-family: 'Comic Neue', cursive;
+}
+
+.cartoon-title {
+  font-family: 'Bangers', cursive;
+  font-size: 2.5rem;
+  color: #e63946;
+  text-shadow: 3px 3px 0 #000;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.popart-input {
+  border: 3px solid #000 !important;
+  border-radius: 10px !important;
+  padding: 1rem 1rem 1rem 2.5rem !important;
+  font-family: 'Comic Neue', cursive;
+  transition: all 0.3s ease;
+}
+
+.popart-input:focus {
+  border-color: #e63946 !important;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.2) !important;
+}
+
+.bubble-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.pow-button {
+  background-color: #e63946 !important;
+  color: white !important;
+  border: 3px solid #000 !important;
+  border-radius: 10px !important;
+  padding: 0.5rem 2rem !important;
+  font-family: 'Bangers', cursive !important;
+  font-size: 1.5rem !important;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.pow-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+}
+
+.action-link {
+  color: #000 !important;
+  font-weight: bold;
+}
+/* ===== END FORM REGISTER ===== */
+/* ===== TOAST ===== */
+.comic-toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 10px 20px;
+  border: 3px solid #000;
+  border-radius: 8px;
+  font-family: 'Comic Neue', cursive;
+}
+/* ===== END TOAST ===== */
+/* ===== TABS ===== */
+.marvel-tabs-container {
+  font-family: "Arial", sans-serif;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  border: 3px solid #000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.marvel-nav-tabs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+.marvel-nav-item {
+  margin-right: 1rem;
+}
+.marvel-nav-link {
+  background: linear-gradient(45deg, #ff0000, #ff7f50);
+  color: #fff;
+  border: 2px solid #000;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0px #000;
+}
+.marvel-nav-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px #000;
+}
+.marvel-nav-link.active {
+  background: linear-gradient(45deg, #0000ff, #1e90ff);
+  box-shadow: none;
+  transform: translateY(0);
+  color: #fff;
+  border-bottom: 3px solid #000;
+}
+.marvel-tab-content {
+  padding: 1rem;
+  border: 2px solid #000;
+  background: #f0f0f0;
+  border-radius: 4px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.marvel-tab-pane {
+  animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* ===== END TABS ===== */
