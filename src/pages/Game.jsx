@@ -3,6 +3,7 @@ import { useParams } from "react-router"
 import SessionContext from "../context/SessionContext";
 import supabase from "../supabase/client";
 import toast, { Toaster } from 'react-hot-toast';
+import Chat from "../components/Chat";
 
 export default function GameDetails() {
 
@@ -49,7 +50,7 @@ export default function GameDetails() {
             .eq('game_id', game.id)
 
             if (error) {
-               toast.error('Oh no qualcosa è andato storto');   
+               // toast.error('Oh no qualcosa è andato storto');   
             } else {
                setFav(favorites)
             }
@@ -102,13 +103,21 @@ export default function GameDetails() {
                )}
                
             </div>
-            <div className="col-12 border border-black border-5 p-0">
-               <img className=" img-fluid " src={game.background_image} alt="" />
+            <div className="col-12 p-0">
+               <img className=" img-fluid border border-black border-5" src={game.background_image} alt="" />
             </div>
-            <div className="col-12 border border-black border-5 bg-white">
-               <p className="">{game.description_raw}</p>
+            <div className="col-md-6 col-12 p-0">
+               { session && 
+                  <div className="col-12">
+                     <Chat game={game} session={session}/>
+                  </div> 
+               }
+            </div>
+            <div className="col-md-5 col-12 border border-black border-5 bg-white">
+               <p>Descrizione: {game.description_raw}</p>
             </div>
          </div>
+         
          <Toaster/>
       </>
    )

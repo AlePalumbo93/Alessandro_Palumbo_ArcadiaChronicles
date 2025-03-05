@@ -222,7 +222,6 @@ min-height: 100vh;
 }
 /* ===== END LOADER COMIC ===== */
 /* ===== ERROR MESSAGE ===== */
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 
 .comic-alert {
     font-family: 'Comic Neue', cursive;
@@ -420,3 +419,89 @@ min-height: 100vh;
   to { opacity: 1; }
 }
 /* ===== END TABS ===== */
+/* =====  CHAT ===== */
+.contenitore-chat {
+  background-color: #f8f9fa;
+  border: 3px solid #000;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  height: 80vh;
+  position: relative;
+}
+
+.area-messaggi {
+  padding: 20px;
+  overflow-y: auto;
+  height: calc(100% - 70px);
+}
+
+.messaggio {
+  max-width: 70%;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 15px;
+  position: relative;
+  border: 2px solid #000;
+  background-color: white;
+}
+
+.messaggio.inviato {
+  background-color: #dcf8c6;
+  margin-left: auto;
+}
+
+.messaggio.ricevuto {
+  background-color: white;
+  margin-right: auto;
+}
+
+.messaggio::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top: 0;
+}
+
+.messaggio.inviato::after {
+  right: -10px;
+  top: 10px;
+  border-left-color: #dcf8c6;
+  border-right: 0;
+}
+
+.messaggio.ricevuto::after {
+  left: -10px;
+  top: 10px;
+  border-right-color: white;
+  border-left: 0;
+}
+
+.area-input {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  border-top: 3px solid #000;
+  border-radius: 0 0 18px 18px;
+}
+
+.input-fumetto {
+  border: 2px solid #000 !important;
+  border-radius: 15px !important;
+  padding: 10px 15px !important;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.pulsante-fumetto {
+  border: 2px solid #000 !important;
+  border-radius: 15px !important;
+  background-color: #ffc107 !important;
+  color: #000 !important;
+  font-family: 'Comic Sans MS', cursive;
+  font-weight: bold;
+}
+/* ===== END CHAT ===== */
