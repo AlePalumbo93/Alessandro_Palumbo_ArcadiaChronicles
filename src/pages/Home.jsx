@@ -19,7 +19,7 @@ export default function Home() {
          <h1 className=" text-center">GIOCHI IN PRIMO PIANO</h1>
          <div className="row justify-content-between">
             <div className="col-2 m-0">
-               <button onClick={()=> setPage((prev) => prev - 1)} className="comic-button">PREV</button>
+               <button onClick={()=> setPage((prev) => prev - 1)} className="comic-button" disabled={page <= 1}>PREV</button>
             </div>
             <div className="col-2 m-0 ">
                <button onClick={()=> setPage((prev) => prev + 1)} className="comic-button">NEXT</button>
