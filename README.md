@@ -12,13 +12,13 @@
 ## Stile
 
 * Bootstrap 
-
+* CSS Puro
 
 ## Pagine
 
-* Rimpiazza con le pagine visitabili
+* Pagine visitabili
 
-1. Pagina 1 - Home page con lista prodotti
+1. # Account - Pagina che permette all' utente registrato di gestire il profilo
 2. Pagina 2 - Pagina dettaglio prodotto
 3. Pagina 3 - Pagina Registrazione utente
 
