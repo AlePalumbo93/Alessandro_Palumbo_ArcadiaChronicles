@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import UpdateAccount from "./UpdateAccount";
+import ShowFavorites from "./ShowFavorites";
 
 const ComicTabs = () => {
    const [activeTab, setActiveTab] = useState("tab1");
@@ -23,24 +25,17 @@ const ComicTabs = () => {
                   Favoriti
                </button>
             </li>
-            <li className="marvel-nav-item">
-               <button
-                  className={`marvel-nav-link ${activeTab === "tab3" ? "active" : ""}`}
-                  onClick={() => setActiveTab("tab3")}
-               >
-                  Messaggi
-               </button>
-            </li>
          </ul>
          <div className="marvel-tab-content">
          {activeTab === "tab1" && (
-            <div className="marvel-tab-pane active">Contenuto della Tab 1</div>
+            <div className="marvel-tab-pane active">
+               <UpdateAccount/>
+            </div>
          )}
          {activeTab === "tab2" && (
-            <div className="marvel-tab-pane active">Contenuto della Tab 2</div>
-         )}
-         {activeTab === "tab3" && (
-            <div className="marvel-tab-pane active">Contenuto della Tab 3</div>
+            <div className="marvel-tab-pane active">
+               <ShowFavorites/>
+            </div>
          )}
          </div>
 

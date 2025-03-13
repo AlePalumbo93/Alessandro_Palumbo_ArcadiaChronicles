@@ -1,18 +1,18 @@
-## Arcadia Chronicles
+# Proposta di Consegna
+
+Rimpiazza questo file con i tuoi elementi del progetto, allegando questo file nel tuo repo online.
 
 ## Descrizione
 
-* Arcadia Chronicles È una web app sviluppata con react che si ispira graficamente, con colori vivaci,  alle pagine dei fumetti. L'applicazione permette di visualizzare tutti i giochi attualmente sul mercato tramite una ricerca full text, una ricerca per generi e una ricerca per piattaforme. Permette inoltre di creare un profilo(registrandosi), autenticarsi, aggiungere ad una lista di favoriti i giochi che si preferiscono e di usufruire di una chat in tempo reale sul dettaglio del gioco selezionato.
+* Breve descrizione di quello che avete sviluppato.
 
 ## API
 
-* API utilizzata: [RAWG](https://api.rawg.io/docs/)
-* Database: Supabase
+* Inserisci il link al API usata o al BaaS usato.
 
 ## Stile
 
-* Bootstrap 
-
+* Rimpizza con la soluzione di stile usata.
 
 ## Pagine
 

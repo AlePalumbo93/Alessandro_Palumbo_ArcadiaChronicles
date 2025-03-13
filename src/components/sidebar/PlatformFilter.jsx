@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
-const urlPlatforms = 'https://api.rawg.io/api/platforms?key=4e17114348b7420eb2a8dae9804e1150';
 
 export default function PlatformFilter() {
+   const urlPlatforms = 'https://api.rawg.io/api/platforms?key=4e17114348b7420eb2a8dae9804e1150';
    const [platforms, setPlatforms] = useState([]);
+   
 
    useEffect(()=>{
       const fetchData = async () =>{
@@ -24,7 +25,7 @@ export default function PlatformFilter() {
          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                {platforms.map((platform) => (
                   <li key={platform.id}>
-                     <Link className="dropdown-item" to={`/games/${platform.id}`}>{platform.name}</Link>
+                     <Link className="dropdown-item" to={`/platform/${platform.id}/${platform.name}`}>{platform.name}</Link>
                   </li>
                ))}
          </ul>

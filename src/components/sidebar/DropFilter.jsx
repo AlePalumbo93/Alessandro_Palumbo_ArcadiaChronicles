@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
-const url = 'https://api.rawg.io/api/genres?key=4e17114348b7420eb2a8dae9804e1150';
 
 export default function DropFilter() {
-
+   
+   const url = 'https://api.rawg.io/api/genres?key=4e17114348b7420eb2a8dae9804e1150';
    const [genres, setGenres] = useState([]);
 
       useEffect(()=>{

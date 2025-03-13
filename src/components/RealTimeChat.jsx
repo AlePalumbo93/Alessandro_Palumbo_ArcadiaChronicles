@@ -74,12 +74,12 @@ export default function RealTimeChat({game}) {
       <div className="area-messaggi" ref={messageRef}>
          {loading && <Loading/>}
          {messages.length > 0 ? messages.map((message) => (
-            <div key={message.id} className="messaggio ricevuto"  ref={messageRef} >
-               <h6>Utente: {message.profile_username}</h6>
-               <p>{message.content}</p>
-               <span>{dayjs().to(dayjs(message.created_at))}</span>
-            </div>
-
+               <div key={message.id} className={message.profile_id == session.user.id ? "messaggio ricevuto" : "messaggio inviato"}  ref={messageRef} >
+                  <h6>Utente: {message.profile_username}</h6>
+                  <p>{message.content}</p>
+                  <span>{dayjs().to(dayjs(message.created_at))}</span>
+               </div>
+            
          )) :
          <article>Nessun messaggio disponibile</article>
          }

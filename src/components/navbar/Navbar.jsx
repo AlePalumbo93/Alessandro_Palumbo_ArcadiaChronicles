@@ -1,14 +1,17 @@
 import { Link, useNavigate } from "react-router";
 import  logo  from "../../media/arcadiaChronicles.png";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import supabase from "../../supabase/client";
 import toast, { Toaster } from 'react-hot-toast';
 import SessionContext from "../../context/SessionContext";
+import SearchBar from "./SearchBar";
 
 export default function Navbar() {
 
-   const { session, user} = useContext(SessionContext)
-   console.log(user);
+   const { session } = useContext(SessionContext)
+   const [avatar_url, setAvatarUrl] = useState(null)
+   const [username, setUsername] = useState(null)
+
    
    const navigate = useNavigate()
    
@@ -18,6 +21,39 @@ export default function Navbar() {
       await new Promise((resolve) => setTimeout(resolve,1000));
       navigate("/")
    }
+
+   useEffect(() => {
+      let ignore = false
+      async function getProfile() {
+
+         if (session) {
+            const { user } = session
+   
+            const { data, error } = await supabase
+            .from('profiles')
+            .select(`username, avatar_url`)
+            .eq('id', user.id)
+            .single()
+   
+            if (!ignore) {
+            if (error) {
+               console.warn(error)
+            } else if (data) {
+               setUsername(data.username)
+               setAvatarUrl(data.avatar_url)
+            }
+            }
+   
+         }
+            
+         }
+
+      getProfile()
+
+      return () => {
+         ignore = true
+      }
+   }, [session])
 
    return(
       <>
@@ -33,21 +69,19 @@ export default function Navbar() {
                      <li className="nav-item">
                         <Link className="nav-link active fontNav" to="/">Home</Link>
                      </li>
-                     <li className="nav-item">
-                        <a className="nav-link fontNav" href="#">Link</a>
-                     </li>
                   </ul>
                </div>
-               <div className=" w-75">
-                  <form className="d-flex" role="search">
-                  <input className="form-control me-2 rounded-5 searchBar"  type="search" placeholder="Search" aria-label="Search"/>
-                  <button className="btn btn-outline-success rounded-5 fontNav" type="submit">Search</button>
-                  </form>
-               </div>
+               <SearchBar/>
                {session ? (
-                  <div className="nav-item dropdown ms-2">
+                  <div className="nav-item dropdown ms-2 d-flex align-items-center">
+                     <img 
+                        src={`https://jpnmkookouqhjphgynmu.supabase.co/storage/v1/object/public/avatars//${avatar_url}`} 
+                        alt="Avatar" 
+                        className="rounded-circle border border-dark me-2" 
+                        style={{ width: '50px', height: '50px', objectFit: 'cover' }}
+                     />
                      <a className="nav-link dropdown-toggle fontNav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {user && user.user_metadata.email}
+                        {session && username}
                      </a>
                      <ul className="dropdown-menu">
                         <li><Link className="dropdown-item" to="/account">Dashboard</Link></li>

@@ -114,7 +114,8 @@ export default function GameDetails() {
                }
             </div>
             <div className="col-md-5 col-12 border border-black border-5 bg-white">
-               <p>Descrizione: {game.description_raw}</p>
+               <h2 className=" text-center">Descrizione</h2>
+               <p>{game.description_raw}</p>
             </div>
          </div>
          

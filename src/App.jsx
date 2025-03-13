@@ -16,10 +16,11 @@ import Account from "./pages/Account";
 import SessionContextProvider from "./context/SessionContextProvider";
 import { useContext } from "react";
 import SessionContext from "./context/SessionContext";
+import SearchGame from "./pages/SearchGame";
 
 function ProtectedRoute() {
 
-  const { session, user } = useContext(SessionContext)
+  const { session } = useContext(SessionContext)
   
   if (!session) {
     return <Navigate to="/login"/>
@@ -29,6 +30,7 @@ function ProtectedRoute() {
   
 }
 
+
 function App() {
   return(
     <BrowserRouter>
@@ -36,8 +38,9 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />}/>
           <Route path="/games/:id/:game" element={<GameDetails />}/>
-          <Route path="/games/:platform" element={<Platform />}/>
+          <Route path="/platform/:platform/:name" element={<Platform />}/>
           <Route path="/games/:genre" element={<Genre />}/>
+          <Route path="/search" element={<SearchGame/>}/>
           <Route element={<ProtectedRoute/>}>
             <Route path="/account" element={<Account />}/>
           </Route>

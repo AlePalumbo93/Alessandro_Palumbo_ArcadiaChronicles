@@ -5,8 +5,9 @@ import ComicCard from "../components/card/ComicCard";
 
 export default function Platform() {
    const [games, setGames] = useState([]);
-   const { platform } = useParams()
-   console.log();
+   const { platform, name } = useParams()
+
+   
    
       useEffect(()=>{
          const fetchData = async () =>{
@@ -22,7 +23,7 @@ export default function Platform() {
 
    return(
       <>
-         <h1 className=" text-center">PIATTAFORMA</h1>
+         <h1 className=" text-center">{name}</h1>
          <div className="row justify-content-between align-items-center">
          {games.map((game)=>(
                <ComicCard key={game.id} game={game}/>
