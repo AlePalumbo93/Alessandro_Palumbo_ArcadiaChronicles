@@ -18,23 +18,30 @@
 
 * Pagine visitabili
 
-1. # Account - Pagina che permette all' utente registrato di gestire il profilo
-2. Pagina 2 - Pagina dettaglio prodotto
-3. Pagina 3 - Pagina Registrazione utente
+1. Account - Pagina che permette all' utente registrato di gestire il profilo
+2. Game - Pagina dettaglio gioco
+3. Genre - Pagina che permette di visualizzare giochi in base al genere
+4. Platform - Pagina che permette di visualizzare giochi in base alla piattaforma
+5. Home - Pagina che ti permette di visualizzare tutti i giochi
+6. SearchGame - Pagina che restituisce i giochi ricercati per nome
+7. SingIn - Pagina di autenticazione
+8. SingUp - Pagina di autenticazione
 
 ## User Interactions
 
 * Lista di interazioni che utenti autenticati e non posso fare nell'applicazione.
 
 1. Utente non autenticato puo scrollare sui giochi in piattaforma
-2. Utente non autenticato puo filtrare per nome del gioco
+2. Utente non autenticato puo filtrare per nome del gioco, generi, piattaforme
 3. Utente non autenicato puo registrarsi con email e password in piattaforma
 4. Utente auteticato puo creare una lista di giochi favoriti
+5. Utente autenticato può usufruire della chat in tempo reale
+6. Utente autenticato può modificare profilo
 
 ## Context
 
-* Rimpiazza con i dati che hai deciso di inserire nel contesto.
+* SessionContext - Gestisce la sessione del profilo
 
 ## Deployment
 
-* Rimpiazza con il link online della tua App.
+* [LINK](https://alessandro-palumbo-arcadia-chronicles.vercel.app/)
